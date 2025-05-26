@@ -102,8 +102,8 @@ sudo apt update && sudo apt install -y \
     llvm-dev \
     libclang-dev \
     screen \
-    ufw \
-    make
+    ufw 
+    
 ```
 
 ### Step 3: Compile Nockchain
@@ -117,7 +117,7 @@ make build
 
 make install-nockchain-wallet
 make install-nockchain
-export PATH="$HOME/.cargo/bin:$PATH"
+
 ```
 
 ## ⚙️ Configuration
@@ -146,8 +146,11 @@ echo 'vm.overcommit_memory=1' | sudo tee -a /etc/sysctl.conf
 
 ### Download Setup Script
 
-Place the `setup_nockchain_multi.sh` script in your built nockchain folder:
-
+Place setup_nockchain_multi.sh in your built nockchain/ folder (next to .env_example and target/).:
+ 
+```sh
+wget https://raw.githubusercontent.com/<your_github>/nockchain-multinode/main/setup_nockchain_multi.sh
+```
 ```
 nockchain/
 ├── setup_nockchain_multi.sh  ← Place here
